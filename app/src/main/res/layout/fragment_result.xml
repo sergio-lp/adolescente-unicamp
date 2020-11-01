@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ResultFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/result_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/result_congratz"
+            android:textAlignment="center"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/result_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/result_title"
+            android:layout_marginTop="8dp"
+            android:text="@string/result_congratz_desc"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_approved_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/tv_approved_total_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/approved_total_score"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/img_crown"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/result_score"
+                android:src="@drawable/ic_crown" />
+
+            <TextView
+                android:id="@+id/result_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_approved_total_score"
+                android:layout_centerInParent="true"
+                android:textSize="112sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/result_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_quiz_button"
+            android:clickable="false"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

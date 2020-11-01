@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#26C6DA</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#000</color>
+    <color name="fabColor">#00DDFF</color>
+
+    <color name="red">#E53935</color>
+    <color name="blue">#00ACC1</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="dark_gray">#125b64</color>
+
+    <color name="btn_color">#E0E0E0</color>
+    <color name="correct_color">#AAF37D</color>
+    <color name="wrong_color">#F8867E</color>
+
+    <color name="gold">#D4AF37</color>
+
+    <color name="disabledColor">#8A8888</color>
+    <color name="gray">#333333</color>
+
+    <color name="selected_bottom_nav">#304FFE</color>
+
+</resources>

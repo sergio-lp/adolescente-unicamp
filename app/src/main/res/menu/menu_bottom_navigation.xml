@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_quiz"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_school_24"
+        android:title="@string/quiz" />
+
+    <item
+        android:id="@+id/menu_ranking"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="@string/ranking" />
+
+    <item
+        android:id="@+id/menu_questions"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:title="@string/questions" />
+
+    <item
+        android:id="@+id/menu_about"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="@string/about" />
+</menu>

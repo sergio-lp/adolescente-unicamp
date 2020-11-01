@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".activities.QuizActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextAppearance="@style/AppbarText" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.rd.PageIndicatorView
+        android:id="@+id/quiz_pager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="8dp"
+        android:visibility="invisible"
+        app:piv_animationType="worm"
+        app:piv_selectedColor="@color/white"
+        app:piv_unselectedColor="@color/btn_color"
+        app:piv_viewPager="@id/quiz_pager" />
+
+    <com.sergiolp.portaldoadolescente.models.CustomViewPager
+        android:id="@+id/quiz_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/quiz_pager_indicator"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

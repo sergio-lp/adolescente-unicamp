@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Adolescentes</string>
+
+    <string name="welcome">Bem vindo ao app Adolescentes da Unicamp!</string>
+    <string name="welcome_description">Nesse aplicativo, você encontrará quizzes sobre os tópicos postados no site Adolescentes da Unicamp, do ambulatório de pediatria da Faculdade de Ciências Médicas! Borá lá?</string>
+    <string name="team">Equipe responsável</string>
+    <string name="team_description">Profª Drª Lilia de Souza Li
+\nPhD Ricardo Nunes
+\nAluna Letícia Mansano
+\nAluno Sérgio Polo
+
+\nDepartamento de Pediatria - FCM Unicamp</string>
+    <string name="result_congratz">Você conseguiu!</string>
+    <string name="result_congratz_desc">Você completou &lt;b>%s&lt;/b>, acertando &lt;b>%d&lt;/b> questões e ganhou &lt;b>%d&lt;/b> coroas!</string>
+    <string name="result_congratz_btn">Oba!</string>
+    <string name="result_failed">Não desanime!</string>
+    <string name="result_failed_description">Você acertou &lt;b>%d&lt;/b> questões, e isso não é suficiente para finalizar o conteúdo de &lt;b>%s&lt;/b>!&lt;br>&lt;br>Leia sobre o conteúdo no site e tente novamente!</string>
+    <string name="ok">OK</string>
+    <string name="login_success">Login realizado com sucesso!</string>
+    <string name="login_wrong_code">Seu código está errado!</string>
+    <string name="login_wrong_username">Esse username não existe!</string>
+    <string name="approved_total_score">Seu total de coroas agora é:</string>
+    <string name="ranking">Ranking</string>
+    <string name="questions">Perguntas</string>
+    <string name="about">Sobre</string>
+    <string name="error">Ops! Algum erro ocorreu. Verifique sua conexão!</string>
+    <string name="quiz">Quiz</string>
+    <string name="info">Informações</string>
+    <string name="warning_no_points">Você não tem nenhuma coroa, finalize algum quiz para ganhar coroas!</string>
+    <string name="plus">+ %d</string>
+    <string name="project_description">Projeto dirigido pela Profª Drª Lilia Li, do ambulatório de pediatria do HC - Unicamp</string>
+    <string name="site">Site</string>
+    <string name="credits">Créditos</string>
+    <string name="login_desc">Escolha uma das opções abaixo para fazer login:</string>
+    <string name="seu_login">Seu login…</string>
+    <string name="seu_codigo">Seu código…</string>
+    <string name="login">Login</string>
+    <string name="no_questions">Nenhuma pergunta foi enviada ainda!</string>
+    <string name="new_question">Fazer nova pergunta</string>
+    <string name="write_question">Sua pergunta…</string>
+    <string name="send_question">Enviar</string>
+    <string name="new_question_success">Pergunta enviada com sucesso! Visite esta página novamente e em algum tempo sua pergunta será respondida!</string>
+    <string name="cancel">Cancelar</string>
+    <string name="question_date">Perguntado em: %s/%s/%s</string>
+    <string name="agreement">Ao enviar sua pergunta, você concorda que ela fique visível para todos, mas sem nenhuma identificação sua!</string>
+    <string name="content_done">Você já terminou o conteúdo de %s!</string>
+    <string name="content_locked">Complete %s para desbloquear este conteúdo!</string>
+
+    <string name="facebook_app_id">836659510507469</string>
+    <string name="fb_login_protocol_scheme">fb836659510507469</string>
+    <string name="id_token_request">23129061343-8d00b2b3rp4ifp7js7j9pp9qhdo2bdpr.apps.googleusercontent.com</string>
+    <string name="parabens">Parabéns!</string>
+    <string name="o_login_utilizado_para_salvar_seu_progresso_nos_quizes_participa_o_no_ranking_e_acompanhamento_pela_equipe_do_projeto">O login é utilizado para salvar seu progresso nos quizzes, partipação no ranking e para acompanhamento pela equipe do projeto.</string>
+    <string name="email">adolesce@unicamp.br</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="contato">Contato</string>
+    <string name="ir_ao_quiz">Ir ao quiz</string>
+    <string name="complete_reply">Leia a resposta completa</string>
+    <string name="mail">E-mail</string>
+</resources>

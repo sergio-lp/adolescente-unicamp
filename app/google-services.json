@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "23129061343",
+    "firebase_url": "https://portal-do-adolescente.firebaseio.com",
+    "project_id": "portal-do-adolescente",
+    "storage_bucket": "portal-do-adolescente.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23129061343:android:84fdcb2fd6ed9fb7a9766a",
+        "android_client_info": {
+          "package_name": "com.sergiolp.portaldoadolescente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23129061343-8d00b2b3rp4ifp7js7j9pp9qhdo2bdpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAForrfCmMgGgK4uDLvBENYI7KKySLcVQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23129061343-8d00b2b3rp4ifp7js7j9pp9qhdo2bdpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
