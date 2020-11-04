@@ -19,6 +19,9 @@ import com.sergiolp.portaldoadolescente.R
 import com.sergiolp.portaldoadolescente.adapters.UnitAdapter
 import com.sergiolp.portaldoadolescente.helpers.DatabaseHelper
 import com.sergiolp.portaldoadolescente.models.Unit
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 
 class MainFragment : Fragment() {
 
@@ -32,31 +35,34 @@ class MainFragment : Fragment() {
         val progressBar = v.findViewById<ProgressBar>(R.id.progress_bar)
         val root = v.findViewById<ViewGroup>(R.id.root)
 
-        val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(context!!)!!)
+        CoroutineScope(Dispatchers.Main).async {
+            val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(context!!)!!)
 
-        val manager = FlexboxLayoutManager(context, FlexDirection.ROW, FlexWrap.WRAP)
-        manager.alignItems = AlignItems.CENTER
-        manager.justifyContent = JustifyContent.SPACE_EVENLY
+            val manager = FlexboxLayoutManager(context, FlexDirection.ROW, FlexWrap.WRAP)
+            manager.alignItems = AlignItems.CENTER
+            manager.justifyContent = JustifyContent.SPACE_EVENLY
 
-        //Getting Units from Firebase
-        dbHelper.collectionUnits.get().addOnSuccessListener { response ->
-            val unitList = response.toObjects(Unit::class.java)
+            //Getting Units from Firebase
+            dbHelper.collectionUnits.get().addOnSuccessListener { response ->
+                val unitList = response.toObjects(Unit::class.java)
 
-            rvUnits.apply {
-                adapter = UnitAdapter(unitList)
-                layoutManager = manager
+                rvUnits.apply {
+                    adapter = UnitAdapter(unitList)
+                    layoutManager = manager
+                }
+
+                progressBar.visibility = View.GONE
+                root.visibility = View.VISIBLE
+
+                dbHelper.finishDB()
+
+            }.addOnFailureListener { e ->
+                Toast.makeText(context, R.string.error, Toast.LENGTH_SHORT).show()
+                Log.e(
+                    "TAG",
+                    "Login Activity - onActivityResult: " + e.message
+                )
             }
-
-            progressBar.visibility = View.GONE
-            root.visibility = View.VISIBLE
-
-            dbHelper.finishDB()
-
-        }.addOnFailureListener { e -> Toast.makeText(context, R.string.error, Toast.LENGTH_SHORT).show()
-            Log.e(
-                "TAG",
-                "Login Activity - onActivityResult: " + e.message
-            )
         }
 
         return v

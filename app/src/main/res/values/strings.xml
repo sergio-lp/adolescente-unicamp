@@ -58,4 +58,9 @@
     <string name="ir_ao_quiz">Ir ao quiz</string>
     <string name="complete_reply">Leia a resposta completa</string>
     <string name="mail">E-mail</string>
+    <string name="trophy_1"><![CDATA[Você completou ao menos 1 quiz e ganhou o troféu <b>Inciante</b>. Complete ao menos 5 quizzes para ganhar o próximo!]]></string>
+    <string name="trophy_5"><![CDATA[Você completou ao menos 5 quizzes e ganhou o troféu <b>Aprendiz</b>. Complete ao menos 10 quizzes para ganhar o próximo!]]></string>
+    <string name="trophy_10"><![CDATA[Você completou ao menos 10 quizzes e ganhou o troféu <b>Dedicado</b>. Complete ao menos 25 quizzes para ganhar o próximo!]]></string>
+    <string name="trophy_25"><![CDATA[Você completou ao menos 25 quizzes e ganhou o troféu <b>Mestre</b>. Complete ao menos 50 quizzes para ganhar o próximo!]]></string>
+    <string name="trophy_50"><![CDATA[Você completou ao menos 50 quizzes e ganhou o troféu <b>Lendário</b>. Este é o último troféu! <b>Parabéns!</b>]]></string>
 </resources>

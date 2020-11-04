@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
@@ -70,11 +71,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getUserScore() {
-        val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(this)!!)
-        val score = dbHelper.getUserPrefScore(baseContext)
-        dbHelper.finishDB()
+        try {
+            val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(this)!!)
+            val score = dbHelper.getUserPrefScore(baseContext)
+            dbHelper.finishDB()
 
-        toolbar_score.text = score.toString()
+            toolbar_score.text = score.toString()
+        } catch (e: Exception) {
+            AlertDialog.Builder(this)
+                .setTitle("Erro")
+                .setMessage("Ocorreu um erro: " + e.localizedMessage)
+                .setCancelable(true)
+                .show()
+        }
     }
 
     override fun onResume() {

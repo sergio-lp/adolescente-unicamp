@@ -19,6 +19,9 @@ import com.sergiolp.portaldoadolescente.R
 import com.sergiolp.portaldoadolescente.adapters.QuestionAdapter
 import com.sergiolp.portaldoadolescente.helpers.DatabaseHelper
 import com.sergiolp.portaldoadolescente.models.Question
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 
 class QuestionsFragment : Fragment() {
     private var current: Int = 0
@@ -33,46 +36,49 @@ class QuestionsFragment : Fragment() {
 
         val rvQuestions = v.findViewById<RecyclerView>(R.id.rv_questions)
         val progressBar = v.findViewById<ProgressBar>(R.id.progress_bar)
-        val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(context!!)!!)
 
-        val fab = v.findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener {
-            val view = LayoutInflater.from(context).inflate(R.layout.dialog_new_question, null)
-            val ed = view.findViewById<EditText>(R.id.ed_question)
+        CoroutineScope(Dispatchers.Main).async {
+            val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(context!!)!!)
 
-            AlertDialog.Builder(context)
-                .setView(view)
-                .setPositiveButton(R.string.send_question) { _, _ ->
-                    val dbHelp = DatabaseHelper(FirebaseApp.initializeApp(context!!)!!)
+            val fab = v.findViewById<FloatingActionButton>(R.id.fab)
+            fab.setOnClickListener {
+                val view = LayoutInflater.from(context).inflate(R.layout.dialog_new_question, null)
+                val ed = view.findViewById<EditText>(R.id.ed_question)
 
-                    val authorId = dbHelp.getUserPrefId(context!!)
-                    dbHelp.addQuestion(
-                        Question(
-                            null,
-                            ed.text.toString(),
-                            authorId,
-                            false,
-                            null,
-                            null,
-                            Timestamp.now()
-                        )
-                    ).addOnSuccessListener {
-                        AlertDialog.Builder(context)
-                            .setMessage(R.string.new_question_success)
-                            .setNeutralButton(R.string.ok) { _, _ -> }
-                            .show()
-                        dbHelp.finishDB()
-                    }.addOnFailureListener {
-                        dbHelp.finishDB()
-                        Toast.makeText(context, R.string.error, Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(context)
+                    .setView(view)
+                    .setPositiveButton(R.string.send_question) { _, _ ->
+                        val dbHelp = DatabaseHelper(FirebaseApp.initializeApp(context!!)!!)
+
+                        val authorId = dbHelp.getUserPrefId(context!!)
+                        dbHelp.addQuestion(
+                            Question(
+                                null,
+                                ed.text.toString(),
+                                authorId,
+                                false,
+                                null,
+                                null,
+                                Timestamp.now()
+                            )
+                        ).addOnSuccessListener {
+                            AlertDialog.Builder(context)
+                                .setMessage(R.string.new_question_success)
+                                .setNeutralButton(R.string.ok) { _, _ -> }
+                                .show()
+                            dbHelp.finishDB()
+                        }.addOnFailureListener {
+                            dbHelp.finishDB()
+                            Toast.makeText(context, R.string.error, Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }
-                .setNegativeButton(R.string.cancel) { p0, _ ->
-                    p0.dismiss()
-                }.show()
-        }
+                    .setNegativeButton(R.string.cancel) { p0, _ ->
+                        p0.dismiss()
+                    }.show()
+            }
 
-        loadData(dbHelper, rvQuestions, progressBar)
+            loadData(dbHelper, rvQuestions, progressBar)
+        }
 
         return v
     }

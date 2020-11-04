@@ -2,6 +2,7 @@ package com.sergiolp.portaldoadolescente.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.sergiolp.portaldoadolescente.R
@@ -19,18 +20,26 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         GlobalScope.launch(Dispatchers.Main) {
-            val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(baseContext)!!)
-            dbHelper.finishDB()
-            delay(2000)
+            try {
+                val dbHelper = DatabaseHelper(FirebaseApp.initializeApp(baseContext)!!)
+                dbHelper.finishDB()
+                delay(2000)
 
-            if (dbHelper.getUserPrefId(baseContext) == "") {
-                val i = Intent(baseContext, IntroActivity::class.java)
-                startActivity(i)
-                finish()
-            } else {
-                val i = Intent(baseContext, MainActivity::class.java)
-                startActivity(i)
-                finish()
+                if (dbHelper.getUserPrefId(baseContext) == "") {
+                    val i = Intent(baseContext, IntroActivity::class.java)
+                    startActivity(i)
+                    finish()
+                } else {
+                    val i = Intent(baseContext, MainActivity::class.java)
+                    startActivity(i)
+                    finish()
+                }
+            } catch (e: Exception) {
+                AlertDialog.Builder(applicationContext)
+                    .setTitle("Erro")
+                    .setMessage("Ocorreu um erro: " + e.localizedMessage)
+                    .setCancelable(true)
+                    .show()
             }
         }
     }

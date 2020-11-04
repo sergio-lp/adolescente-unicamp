@@ -2,6 +2,7 @@ package com.sergiolp.portaldoadolescente.helpers
 
 import android.app.AlertDialog
 import android.content.Context
+import androidx.core.content.edit
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
@@ -110,39 +111,36 @@ class DatabaseHelper(app: FirebaseApp) : ViewModel() {
         }
     }
 
-    fun shouldShowTrophyBadge1(ctx: Context): Boolean? {
-        val b = ctx.getSharedPreferences(COLLECTION_USERS, Context.MODE_PRIVATE)
-            .getBoolean(BADGE_1, true)
+    fun shouldShowTrophyBadge(trophy: Int, ctx: Context): Boolean {
+        var t: String = ""
+
+        when (trophy) {
+            1 -> {
+                t = BADGE_1
+            }
+            5 -> {
+                t = BADGE_5
+            }
+            10 -> {
+                t = BADGE_10
+            }
+            25 -> {
+                t = BADGE_25
+            }
+            50 -> {
+                t = BADGE_50
+            }
+        }
+
+        val sharedPreferences = ctx.getSharedPreferences(COLLECTION_USERS, Context.MODE_PRIVATE)
+
+        val b = sharedPreferences.getBoolean(t, true)
+
+        with(sharedPreferences.edit()) {
+            putBoolean(t, false)
+            commit()
+        }
 
         return b
     }
-
-    fun shouldShowTrophyBadge5(ctx: Context): Boolean? {
-        val b = ctx.getSharedPreferences(COLLECTION_USERS, Context.MODE_PRIVATE)
-            .getBoolean(BADGE_5, true)
-
-        return b
-    }
-
-    fun shouldShowTrophyBadge10(ctx: Context): Boolean? {
-        val b = ctx.getSharedPreferences(COLLECTION_USERS, Context.MODE_PRIVATE)
-            .getBoolean(BADGE_10, true)
-
-        return b
-    }
-
-    fun shouldShowTrophyBadge25(ctx: Context): Boolean? {
-        val b = ctx.getSharedPreferences(COLLECTION_USERS, Context.MODE_PRIVATE)
-            .getBoolean(BADGE_25, true)
-
-        return b
-    }
-
-    fun shouldShowTrophyBadge50(ctx: Context): Boolean? {
-        val b = ctx.getSharedPreferences(COLLECTION_USERS, Context.MODE_PRIVATE)
-            .getBoolean(BADGE_50, true)
-
-        return b
-    }
-
 }
