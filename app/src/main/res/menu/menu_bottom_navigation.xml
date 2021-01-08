@@ -10,7 +10,7 @@
         android:id="@+id/menu_ranking"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_star_24"
-        android:title="@string/ranking" />
+        android:title="@string/pontuação" />
 
     <item
         android:id="@+id/menu_questions"

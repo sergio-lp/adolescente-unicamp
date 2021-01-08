@@ -20,7 +20,7 @@
     <string name="login_wrong_code">Seu código está errado!</string>
     <string name="login_wrong_username">Esse username não existe!</string>
     <string name="approved_total_score">Seu total de coroas agora é:</string>
-    <string name="ranking">Ranking</string>
+    <string name="pontuação">Pontuação</string>
     <string name="questions">Perguntas</string>
     <string name="about">Sobre</string>
     <string name="error">Ops! Algum erro ocorreu. Verifique sua conexão!</string>
@@ -63,4 +63,5 @@
     <string name="trophy_10"><![CDATA[Você completou ao menos 10 quizzes e ganhou o troféu <b>Dedicado</b>. Complete ao menos 25 quizzes para ganhar o próximo!]]></string>
     <string name="trophy_25"><![CDATA[Você completou ao menos 25 quizzes e ganhou o troféu <b>Mestre</b>. Complete ao menos 50 quizzes para ganhar o próximo!]]></string>
     <string name="trophy_50"><![CDATA[Você completou ao menos 50 quizzes e ganhou o troféu <b>Lendário</b>. Este é o último troféu! <b>Parabéns!</b>]]></string>
+    <string name="parab_ns_continue_se_esfor_ando">Parabéns! Continue se esforçando!</string>
 </resources>
