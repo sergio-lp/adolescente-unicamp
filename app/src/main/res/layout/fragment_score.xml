@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
         <RelativeLayout
             android:id="@+id/root"
@@ -25,7 +25,7 @@
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingVertical="16dp"
-            android:visibility="invisible">
+            android:visibility="visible">
 
             <LinearLayout
                 android:id="@+id/ll"
@@ -53,6 +53,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
+                android:layout_margin="16dp"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:orientation="vertical">

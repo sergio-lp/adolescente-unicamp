@@ -27,8 +27,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.11">
-
+        android:layout_weight="0.15">
         <Button
             android:id="@+id/btn_quiz"
             android:layout_width="wrap_content"
@@ -38,7 +37,7 @@
             android:layout_gravity="center"
             android:background="@drawable/shape_quiz_button"
             android:gravity="center"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/ir_ao_quiz"
             android:textAllCaps="false"
             android:textSize="20sp" />
