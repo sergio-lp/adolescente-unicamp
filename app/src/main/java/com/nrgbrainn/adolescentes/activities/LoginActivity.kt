@@ -1,5 +1,7 @@
 package com.nrgbrainn.adolescentes.activities
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -88,6 +90,50 @@ class LoginActivity : AppCompatActivity() {
                 )
             }
         })
+
+        //No SignIn
+        no_login_btn.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setCancelable(true)
+                .setTitle(getString(R.string.no_login_title))
+                .setMessage(getString(R.string.no_login_warning))
+                .setPositiveButton(R.string.ok) { _, _ ->
+                    mAuth.signInAnonymously().addOnSuccessListener {
+                        if (mAuth.uid != null) {
+                            mDB.searchUser(mAuth.uid!!)
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        if (task.result != null && task.result!!.exists()) {
+                                            finish()
+                                        } else {
+                                            mDB.addUser(
+                                                mAuth.uid!!,
+                                                "Usuário anônimo",
+                                                ""
+                                            ).addOnSuccessListener {
+                                                mDB.addUserPrefId(baseContext, mAuth.uid!!)
+                                                startActivity(
+                                                    Intent(
+                                                        baseContext,
+                                                        MainActivity::class.java
+                                                    )
+                                                )
+                                                mDB.finishDB()
+                                                finish()
+                                            }.addOnFailureListener { e ->
+                                                errorHandler(e, "addUser")
+                                            }
+                                        }
+                                    } else {
+                                        errorHandler(task.exception, "searchUser")
+                                    }
+                                }
+                        }
+                    }
+                }
+                .setNegativeButton(R.string.cancel) { dialog, _ -> dialog.dismiss() }
+                .show()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -11,10 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
 import com.nrgbrainn.adolescentes.R
-import com.nrgbrainn.adolescentes.fragments.InfoFragment
-import com.nrgbrainn.adolescentes.fragments.MainFragment
-import com.nrgbrainn.adolescentes.fragments.QuestionsFragment
-import com.nrgbrainn.adolescentes.fragments.ScoreFragment
+import com.nrgbrainn.adolescentes.fragments.*
 import com.nrgbrainn.adolescentes.helpers.DatabaseHelper
 import com.nrgbrainn.adolescentes.helpers.USER_SCORE
 import kotlinx.android.synthetic.main.activity_main.*

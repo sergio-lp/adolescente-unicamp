@@ -47,14 +47,14 @@ class ContentAdapter(private val contentList: List<Content>) :
                 statusImg = holder.img.context.getDrawable(R.drawable.ic_baseline_check_24)
                 holder.root.setCardBackgroundColor(Color.parseColor(content.color))
                 holder.root.setOnClickListener {
-                    Toast.makeText(
-                        holder.root.context,
-                        String.format(
-                            holder.root.context.getString(R.string.content_done),
-                            content.title
-                        ),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    val i = Intent(holder.tvSubtitle.context, SiteActivity::class.java)
+                    i.putExtra(UNIT_ID, content.unitId)
+                    i.putExtra(CONTENT_ID, content.id.toString())
+                    i.putExtra(CONTENT_STATUS, content.status!!)
+                    i.putExtra(CONTENT_TITLE, content.title)
+                    i.putExtra(CONTENT_URL, content.url)
+                    i.putExtra(USER_ID, content.userId.toString())
+                    holder.root.context.startActivity(i)
                 }
                 holder.img.colorFilter =
                     PorterDuffColorFilter(

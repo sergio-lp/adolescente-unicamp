@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Adolescentes</string>
-
     <string name="welcome">Bem vindo ao app Adolescentes da Unicamp!</string>
     <string name="welcome_description">Nesse aplicativo, você encontrará quizzes sobre os tópicos postados no site Adolescentes da Unicamp, do ambulatório de pediatria da Faculdade de Ciências Médicas! Borá lá?</string>
     <string name="team">Equipe responsável</string>
@@ -8,7 +7,7 @@
 \nPhD Ricardo Nunes
 \nAluna Letícia Mansano
 \nAluno Sérgio Polo
-
+\nAluna Thaís Tawil
 \nDepartamento de Pediatria - FCM Unicamp</string>
     <string name="result_congratz">Você conseguiu!</string>
     <string name="result_congratz_desc">Você completou &lt;b>%s&lt;/b>, acertando &lt;b>%d&lt;/b> questões e ganhou &lt;b>%d&lt;/b> coroas!</string>
@@ -45,7 +44,6 @@
     <string name="agreement">Ao enviar sua pergunta, você concorda que ela fique visível para todos, mas sem nenhuma identificação sua!</string>
     <string name="content_done">Você já terminou o conteúdo de %s!</string>
     <string name="content_locked">Complete %s para desbloquear este conteúdo!</string>
-
     <string name="facebook_app_id">836659510507469</string>
     <string name="fb_login_protocol_scheme">fb836659510507469</string>
     <string name="id_token_request">23129061343-8d00b2b3rp4ifp7js7j9pp9qhdo2bdpr.apps.googleusercontent.com</string>
@@ -64,4 +62,7 @@
     <string name="trophy_25"><![CDATA[Você completou ao menos 25 quizzes e ganhou o troféu <b>Mestre</b>. Complete ao menos 50 quizzes para ganhar o próximo!]]></string>
     <string name="trophy_50"><![CDATA[Você completou ao menos 50 quizzes e ganhou o troféu <b>Lendário</b>. Este é o último troféu! <b>Parabéns!</b>]]></string>
     <string name="parab_ns_continue_se_esfor_ando">Parabéns! Continue se esforçando!</string>
+    <string name="pular">Pular</string>
+    <string name="no_login_warning">Não fazer login com uma conta Google ou Facebook impedirá você de participar do ranking e você perderá seu progresso caso desinstale o app.</string>
+    <string name="no_login_title">Aviso</string>
 </resources>
