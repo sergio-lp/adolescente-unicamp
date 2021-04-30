@@ -82,6 +82,7 @@ class InfoFragment : Fragment() {
             val dialog = AlertDialog.Builder(context)
                 .setMessage(
                     Html.fromHtml(
+                        "Photos by <a href=\"https://www.unsplash.com/\" title=\"Unsplash\">Unsplash</a> from <a href=\"https://www.unsplash.com/\" title=\"Unsplash\">www.unsplash.com</a><<br/><br/>" +
                         "Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a><<br/><br/>" +
                                 "Icons by <a href=\"https://github.com/google/material-design-icons\">Google Material Design Icons<a><br/><br/>" +
                                 "<b><a href=\"https://github.com/bumptech/glide\">Glide</a></b><br/>Copyright 2014 Google, Inc. All rights reserved.<br/>BSD-3-Clause | MIT License | Apache License 2.0<br/><br/>" +

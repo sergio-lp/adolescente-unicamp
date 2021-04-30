@@ -68,7 +68,8 @@ class ContentActivity : AppCompatActivity() {
                 user?.completed_content = arrayListOf()
             }
 
-            val completedContentMap = TreeMap<String, Int>()
+            val completedContentMap = TreeMap<Int, Int>()
+            val completedContentMapGreater = TreeMap<Int, Int>()
 
 
             if (user?.completed_content != null && user?.completed_content!!.isNotEmpty()) {
@@ -162,16 +163,26 @@ class ContentActivity : AppCompatActivity() {
 
                 for (content in user?.completed_content!!) {
                     if (content.startsWith("$unitId+")) {
-                        completedContentMap[content] = Content.STATUS_DONE
+                        if (content.length > 3) {
+                            completedContentMapGreater["${content[2]}${content[3]}".toInt()] = Content.STATUS_DONE
+                        } else {
+                            completedContentMap[content[2].toString().toInt()] = Content.STATUS_DONE
+                        }
                     }
+                }
+
+                for (content in completedContentMapGreater) {
+                    completedContentMap[content.key] = Content.STATUS_DONE
                 }
             }
 
-            if (completedContentMap.isNotEmpty()) {
-                completedContentMap["$unitId+${(completedContentMap.lastKey()[2] + 1)}"] =
+            val ccMap = completedContentMap.toSortedMap()
+
+            if (ccMap.isNotEmpty()) {
+                ccMap[ccMap.lastKey() + 1] =
                     Content.STATUS_UNLOCKED
             } else {
-                completedContentMap["$unitId+1"] = Content.STATUS_UNLOCKED
+                ccMap[1] = Content.STATUS_UNLOCKED
             }
 
             //Getting Unit's content and setting whether the user has or hasn't completed
@@ -189,8 +200,8 @@ class ContentActivity : AppCompatActivity() {
                         content.url = ""
                     }
 
-                    if (completedContentMap.containsKey("$unitId+${content.id}")) {
-                        content.status = completedContentMap.getValue("$unitId+${content.id}")
+                    if (ccMap.containsKey(content.id?.toInt())) {
+                        content.status = ccMap.getValue(content.id?.toInt())
                     } else {
                         content.status = Content.STATUS_LOCKED
                     }
