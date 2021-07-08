@@ -2,6 +2,6 @@
 
 https://sergio-lp.github.io/
 
-[Imagem 1](https://i.imgur.com/zwDT85F.png)
+![Imagem 1](https://github.com/sergio-lp/adolescente-unicamp/blob/master/screenshot_1.png "1")
 
-[Imagem 2](https://imgur.com/dbr7UHQ)
+![Imagem 2](https://github.com/sergio-lp/adolescente-unicamp/blob/master/screenshot_2.png "2")
